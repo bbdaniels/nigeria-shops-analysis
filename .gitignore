@@ -74,6 +74,7 @@
 
 # Markdown
 !/**/*.md
+!/**/*.png
 
 #######################
 # Include some additional file formats in any output folder. You might have
