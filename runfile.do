@@ -10,6 +10,18 @@ iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
 save "${git}/data/data.dta" , replace
 
 // Telemedicine
+use "${git}/data/data.dta" , clear
+
+  replace lga = proper(lga)
+  
+  graph hbar telemedicine_service ///
+  , blabel(bar, format(%9.2f) size(tiny)) nofill ///
+    by(state, title("Telemedicine Availability by LGA", pos(11) span)) ///
+    over(lga , label(labsize(tiny)))  ///
+    ysize(6) ylab(0 "0%" .5 "50%" 1 "100%") ytit("") 
+    
+    graph export "${git}/outputs/telemedicine.png" , replace
+    
 
 // Fig: Cascade by State (Logarithmic)
 use "${git}/data/data.dta" , clear
