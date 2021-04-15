@@ -30,7 +30,27 @@ use "${git}/data/data.dta" , clear
     ylab(0 "0%" .5 "50%" 1 "100%") ytit("") 
     
     graph export "${git}/outputs/telemedicine2.png" , replace
+
+// Reporting by date
+use "${git}/data/data.dta" , clear
+  
+  collapse (count) attendance_total , by(state fac_type year month)
+    replace fac_type = "Clinical Facility" if fac_type == "Clinical Faclity"
+    drop if fac_type == "Hospital"
+  
+  gen t_string = string(month) + "/" + string(year)
+    gen t = date(t_string,"MY")
+    format t %tdMon_YY
     
+    tw (line attendance_total t) ///
+    , by(state fac_type , c(2) colfirst ixaxes yrescale ///
+         title("Facilities Reporting Over Time", pos(11) span)) ///
+      yscale(r(0)) ylab(#3) xtit("") ytit("")
+      
+      graph export "${git}/outputs/reporting.png" , replace
+      
+    
+  
 
 // Fig: Cascade by State (Logarithmic)
 use "${git}/data/data.dta" , clear
