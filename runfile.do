@@ -13,6 +13,7 @@ save "${git}/data/data.dta" , replace
 use "${git}/data/data.dta" , clear
 
   replace lga = proper(lga)
+  replace fac_type = "Clinical Facility" if fac_type == "Clinical Faclity"
   
   graph hbar telemedicine_service ///
   , blabel(bar, format(%9.2f) size(tiny)) nofill ///
@@ -21,6 +22,14 @@ use "${git}/data/data.dta" , clear
     ysize(6) ylab(0 "0%" .5 "50%" 1 "100%") ytit("") 
     
     graph export "${git}/outputs/telemedicine.png" , replace
+    
+  graph hbar telemedicine_service ///
+  , blabel(bar, format(%9.2f) size(small)) nofill ///
+    by(state, title("Telemedicine Availability by Type", pos(11) span)) ///
+    over(fac_type , label(labsize(small)))  ///
+    ylab(0 "0%" .5 "50%" 1 "100%") ytit("") 
+    
+    graph export "${git}/outputs/telemedicine2.png" , replace
     
 
 // Fig: Cascade by State (Logarithmic)

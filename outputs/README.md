@@ -5,3 +5,5 @@
 ![](closures.png)
 
 ![](telemedicine.png)
+
+![](telemedicine2.png)
