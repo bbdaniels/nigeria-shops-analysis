@@ -85,7 +85,7 @@ keep if facility_closed_shutdown != .
     format d %tdMon_YY
     
     tw (line open d if d > 21735 & d < 22286) ///
-    , yscale(r(1)) ylab(#6) xlab(21550 21731 21915 22097 22281) ///
+    , yscale(r(1)) ylab(#6) xlab(21731 21915 22097 22281) ///
       by(state , noyrescale title("Facility Closures During COVID", pos(11) span)) ///
       xtit("") ytit("")
       
