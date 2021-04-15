@@ -78,6 +78,36 @@ use "${git}/data/data.dta" , clear
       
     graph export "${git}/outputs/state.png" , replace
     
+// Fig: Cascade by State, type (Logarithmic)
+use "${git}/data/data.dta" , clear
+
+    replace fac_type = "Clinical Facility" if fac_type == "Clinical Faclity"
+    drop if fac_type == "Hospital"
+
+  collapse ///
+    (sum) attendance_total screened_total presumptives_total diagnosed_total ///
+  , by(year month state fac_type) fast
+  
+  drop if attendance_total == 0
+  
+  gen t_string = string(month) + "/" + string(year)
+    gen t = date(t_string,"MY")
+    format t %tdMon_YY
+    
+    replace diagnosed_total = 1 if diagnosed_total == 0
+  
+  tw ///
+    (area presumptives_total t , lw(none) fc(black)) ///
+    (area diagnosed_total t , lw(none) fc(red)) ///
+  , yscale(r(1)) ylab(#3) yscale(log) ylab(1 "0" 10 100 1000 , labsize(small)) ///
+    xsize(7) xlab(21550 21731 21915 22097 22281) xtit("Month") ///
+    by(state fac_type, c(2) colfirst ixaxes yrescale legend(pos(12)) ///
+      title("Case Cascade by State, Logarithmic", pos(11) span))  ///
+    legend(r(1) size(small) symxsize(small) symysize(small) ///
+      order(1 "Total Presumptive" 2 "Total Diagnosed")) ysize(6)
+      
+    graph export "${git}/outputs/cascade-type.png" , replace
+    
 // Fig: Availability by date
 
 use "${git}/data/data.dta" , clear
