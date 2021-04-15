@@ -9,6 +9,7 @@ use "${box}/SHOPS Plus Progam Data 2018-2021.dta" , clear
 iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
 save "${git}/data/data.dta" , replace
 
+// Telemedicine
 
 // Fig: Cascade by State (Logarithmic)
 use "${git}/data/data.dta" , clear
@@ -42,7 +43,7 @@ use "${git}/data/data.dta" , clear
 keep if facility_closed_shutdown != .
 
   // date setup
-  keep fac_id close_date1 open_date1 lga
+  keep fac_id close_date1 open_date1 state
     gen close = date(close_date1,"MDY") if regexm(close_date1,"/2020")
       replace close_date1 = close_date1 + "20" if regexm(close_date1,"-20")
       gen c2 = date(close_date1,"DMY") if close == .
@@ -68,7 +69,7 @@ keep if facility_closed_shutdown != .
   tsset fac_id d
     tsfill , full
     
-    bys fac_id : egen l2 = mode(lga)
+    bys fac_id : egen l2 = mode(state)
     
     drop j
     
@@ -79,9 +80,15 @@ keep if facility_closed_shutdown != .
     }
     
     collapse (sum) open , by(d l2) fast
+    ren l2 state
     
-    tw (line open d in 2/-2) ///
-    , yscale(r(1)) ylab(#6) by(l2 , noyrescale)
+    tw (line open d if d > 21735 & d < 22286) ///
+    , yscale(r(1)) ylab(#6) ///
+      by(state , noyrescale title("Facility Closures During COVID", pos(11) span)) ///
+      xtit("") ytit("")
+      
+    
+    graph export "${git}/outputs/closures.png" , replace
 
 
 // End of dofile
