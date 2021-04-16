@@ -7,6 +7,7 @@ global git "/Users/bbdaniels/GitHub/nigeria-shops-analysis"
 
 use "${box}/SHOPS Plus Progam Data 2018-2021.dta" , clear
 iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
+drop if year == 2021
 save "${git}/data/data.dta" , replace
 
 // Telemedicine
