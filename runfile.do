@@ -15,6 +15,7 @@ use "${git}/data/data.dta" , clear
 
   replace lga = proper(lga)
   replace fac_type = "Clinical Facility" if fac_type == "Clinical Faclity"
+  drop if fac_type == "Hospital" 
   
   graph hbar telemedicine_service ///
   , blabel(bar, format(%9.2f) size(tiny)) nofill ///
@@ -31,6 +32,29 @@ use "${git}/data/data.dta" , clear
     ylab(0 "0%" .5 "50%" 1 "100%") ytit("") 
     
     graph export "${git}/outputs/telemedicine2.png" , replace
+    
+// Telemedicine
+use "${git}/data/data.dta" , clear
+
+  replace lga = proper(lga)
+  replace fac_type = "Clinical Facility" if fac_type == "Clinical Faclity"
+  drop if fac_type == "Hospital" 
+  
+  graph hbar (sum) telemedicine_service (count) telemedicine_service  ///
+  , bargap(-100) nofill ///
+    by(state, title("Telemedicine Availability by LGA", pos(11) span)) ///
+    over(lga , label(labsize(tiny)))  ///
+    ysize(6) ytit("")  legend(order(1 "Telemedicine" 2 "No Telemedicine") size(small))
+    
+    graph export "${git}/outputs/telemedicine3.png" , replace
+    
+  graph hbar (sum) telemedicine_service (count) telemedicine_service  ///
+  , bargap(-100) nofill ///
+    by(state, c(1) title("Telemedicine Availability by LGA", pos(11) span)) ///
+    over(fac_type , label(labsize(small)))  ///
+    ysize(6) ytit("")  legend(order(1 "Telemedicine" 2 "No Telemedicine") size(small))
+    
+    graph export "${git}/outputs/telemedicine4.png" , replace
 
 // Reporting by date
 use "${git}/data/data.dta" , clear
