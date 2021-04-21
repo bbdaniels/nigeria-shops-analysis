@@ -8,6 +8,8 @@
 
 ![](reporting.png)
 
+![](costs.png)
+
 ![](telemedicine.png)
 
 ![](telemedicine2.png)

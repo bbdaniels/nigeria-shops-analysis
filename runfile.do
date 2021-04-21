@@ -10,6 +10,17 @@ iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
 drop if year == 2021
 save "${git}/data/data.dta" , replace
 
+// Costs
+use "${git}/data/data.dta" , clear
+
+graph hbox cost_of_*_test telecmedicine_service_cost cost_of_registration ///
+  , noout over(fac_type) ylab(0 1000 "1k" 2000 "2k" 3000 "3k" 4000 "4k" 5000 "5k") ///
+  by(state,  ///
+      c(2) title("Cost of Services by Facility Type", pos(11) span)) ///
+      legend(order(1 "Sputum" 2 "GeneXpert" 3 "X-Ray" 4 "HIV" 5 "Telemedicine" 6 "Registration"))
+      
+      graph export "${git}/outputs/costs.png" , replace
+
 // Telemedicine
 use "${git}/data/data.dta" , clear
 
