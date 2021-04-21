@@ -12,6 +12,6 @@
 
 ![](telemedicine2.png)
 
-![](telemedicine3.png)
+![](telemedicine3.png) ([table](telemedicine3.csv))
 
-![](telemedicine4.png)
+![](telemedicine4.png) ([table](telemedicine4.csv))

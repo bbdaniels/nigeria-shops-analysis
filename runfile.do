@@ -47,6 +47,7 @@ use "${git}/data/data.dta" , clear
     ysize(6) ytit("")  legend(order(1 "Telemedicine" 2 "No Telemedicine") size(small))
     
     graph export "${git}/outputs/telemedicine3.png" , replace
+    tabout lga telemedicine_service using "${git}/outputs/telemedicine3.csv" , style(csv) replace
     
   graph hbar (sum) telemedicine_service (count) telemedicine_service  ///
   , bargap(-100) nofill ///
@@ -55,6 +56,7 @@ use "${git}/data/data.dta" , clear
     ysize(6) ytit("")  legend(order(1 "Telemedicine" 2 "No Telemedicine") size(small))
     
     graph export "${git}/outputs/telemedicine4.png" , replace
+    tabout fac_type telemedicine_service using "${git}/outputs/telemedicine4.csv" , style(csv) replace
 
 // Reporting by date
 use "${git}/data/data.dta" , clear
