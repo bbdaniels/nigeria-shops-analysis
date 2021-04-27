@@ -10,6 +10,62 @@ iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
 drop if year == 2021
 save "${git}/data/data.dta" , replace
 
+// TX types
+use "${git}/data/data.dta" , clear
+
+  collapse (sum) cases_starttrt_pvthosp_total cases_starttrt_pubhosp_total ///
+    , by(year month state) fast
+    
+      gen t_string = string(month) + "/" + string(year)
+        gen t = date(t_string,"MY")
+        format t %tdMon_YY
+              
+        levelsof t , local(levels)
+        local x = 0
+        local base = 2019
+        foreach level in `levels' {
+          local ++x
+          local l = substr("`:word `=month(`level')' of `c(Mons)''",1,1) 
+            if `=month(`level')' == 1 local l = `" "{bf:J}" "{bf:`base'}{&rarr}""'
+            if `=month(`level')' == 1 local ++base
+          local lab = `"`lab'"' + `" `x' `"`l'"' "'
+        }
+
+  graph bar (sum) cases_starttrt_pvthosp_total cases_starttrt_pubhosp_total ///
+  , stack over(t , relabel(`lab') ) by(state , title("Treatment") c(1) legend( pos(3))) ///
+    legend(c(1) symxsize(small) symysize(small) order(2 "Public" 1 "Private" ))
+    
+    graph export "${git}/outputs/treat-state.png" , replace
+    
+use "${git}/data/data.dta" , clear
+
+  replace fac_type = "Clinical Facility" if fac_type == "Clinical Faclity"
+  drop if fac_type == "Hospital" 
+
+  collapse (sum) cases_starttrt_pvthosp_total cases_starttrt_pubhosp_total ///
+    , by(year month state fac_type) fast
+    
+      gen t_string = string(month) + "/" + string(year)
+        gen t = date(t_string,"MY")
+        format t %tdMon_YY
+              
+        levelsof t , local(levels)
+        local x = 0
+        local base = 2019
+        foreach level in `levels' {
+          local ++x
+          local l = substr("`:word `=month(`level')' of `c(Mons)''",1,1) 
+            if `=month(`level')' == 1 local l = `" "{bf:J}" "{bf:`base'}{&rarr}""'
+            if `=month(`level')' == 1 local ++base
+          local lab = `"`lab'"' + `" `x' `"`l'"' "'
+        }
+
+  graph bar (sum) cases_starttrt_pvthosp_total cases_starttrt_pubhosp_total ///
+  , stack over(t , relabel(`lab') ) by(state fac_type , title("Treatment") c(2) iscale(*.55) colfirst ixaxes yrescale legend( pos(3))) ///
+    legend(c(1) symxsize(small) symysize(small) order(2 "Public" 1 "Private"))
+    
+    graph export "${git}/outputs/treat-fac_type.png" , replace
+
 // Diagnosis types
 use "${git}/data/data.dta" , clear
 

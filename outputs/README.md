@@ -8,6 +8,10 @@
 
 ![](img/cases-fac_type.png)
 
+![](img/treat-state.png)
+
+![](img/treat-fac_type.png)
+
 ![](img/closures.png)
 
 ![](img/reporting.png)
