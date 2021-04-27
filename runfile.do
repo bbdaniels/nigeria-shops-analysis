@@ -35,7 +35,7 @@ use "${git}/data/data.dta" , clear
   , stack over(t , relabel(`lab') ) by(state , title("Treatment") c(1) legend( pos(3))) ///
     legend(c(1) symxsize(small) symysize(small) order(2 "Public" 1 "Private" ))
     
-    graph export "${git}/outputs/treat-state.png" , replace
+    graph export "${git}/outputs/img/treat-state.png" , replace
     
 use "${git}/data/data.dta" , clear
 
@@ -64,7 +64,7 @@ use "${git}/data/data.dta" , clear
   , stack over(t , relabel(`lab') ) by(state fac_type , title("Treatment") c(2) iscale(*.55) colfirst ixaxes yrescale legend( pos(3))) ///
     legend(c(1) symxsize(small) symysize(small) order(2 "Public" 1 "Private"))
     
-    graph export "${git}/outputs/treat-fac_type.png" , replace
+    graph export "${git}/outputs/img/treat-fac_type.png" , replace
 
 // Diagnosis types
 use "${git}/data/data.dta" , clear
@@ -91,7 +91,7 @@ use "${git}/data/data.dta" , clear
   , stack over(t , relabel(`lab') ) by(state , c(1) legend( pos(3))) ///
     legend(c(1) symxsize(small) symysize(small) order(3 "Other" 2 "AFB" 1 "Xpert" ))
     
-    graph export "${git}/outputs/cases-state.png" , replace
+    graph export "${git}/outputs/img/cases-state.png" , replace
     
 use "${git}/data/data.dta" , clear
 
@@ -120,7 +120,7 @@ use "${git}/data/data.dta" , clear
   , stack over(t , relabel(`lab') ) by(state fac_type , c(2) iscale(*.55) colfirst ixaxes yrescale legend( pos(3))) ///
     legend(c(1) symxsize(small) symysize(small) order(3 "Other" 2 "AFB" 1 "Xpert" ))
     
-    graph export "${git}/outputs/cases-fac_type.png" , replace
+    graph export "${git}/outputs/img/cases-fac_type.png" , replace
 
 
 // Costs
@@ -132,7 +132,7 @@ graph hbox cost_of_*_test telecmedicine_service_cost cost_of_registration ///
       c(2) title("Cost of Services by Facility Type", pos(11) span)) ///
       legend(order(1 "Sputum" 2 "GeneXpert" 3 "X-Ray" 4 "HIV" 5 "Telemedicine" 6 "Registration"))
       
-      graph export "${git}/outputs/costs.png" , replace
+      graph export "${git}/outputs/img/costs.png" , replace
 
 // Telemedicine
 use "${git}/data/data.dta" , clear
@@ -147,7 +147,7 @@ use "${git}/data/data.dta" , clear
     over(lga , label(labsize(tiny)))  ///
     ysize(6) ylab(0 "0%" .5 "50%" 1 "100%") ytit("") 
     
-    graph export "${git}/outputs/telemedicine.png" , replace
+    graph export "${git}/outputs/img/telemedicine.png" , replace
     
   graph hbar telemedicine_service ///
   , blabel(bar, format(%9.2f) size(small)) nofill ///
@@ -155,7 +155,7 @@ use "${git}/data/data.dta" , clear
     over(fac_type , label(labsize(small)))  ///
     ylab(0 "0%" .5 "50%" 1 "100%") ytit("") 
     
-    graph export "${git}/outputs/telemedicine2.png" , replace
+    graph export "${git}/outputs/img/telemedicine2.png" , replace
     
 // Telemedicine
 use "${git}/data/data.dta" , clear
@@ -170,8 +170,8 @@ use "${git}/data/data.dta" , clear
     over(lga , label(labsize(tiny)))  ///
     ysize(6) ytit("")  legend(order(1 "Telemedicine" 2 "No Telemedicine") size(small))
     
-    graph export "${git}/outputs/telemedicine3.png" , replace
-    tabout lga telemedicine_service using "${git}/outputs/telemedicine3.csv" , style(csv) replace
+    graph export "${git}/outputs/img/telemedicine3.png" , replace
+    tabout lga telemedicine_service using "${git}/outputs/img/telemedicine3.csv" , style(csv) replace
     
   graph hbar (sum) telemedicine_service (count) telemedicine_service  ///
   , bargap(-100) nofill ///
@@ -179,8 +179,8 @@ use "${git}/data/data.dta" , clear
     over(fac_type , label(labsize(small)))  ///
     ysize(6) ytit("")  legend(order(1 "Telemedicine" 2 "No Telemedicine") size(small))
     
-    graph export "${git}/outputs/telemedicine4.png" , replace
-    tabout fac_type telemedicine_service using "${git}/outputs/telemedicine4.csv" , style(csv) replace
+    graph export "${git}/outputs/img/telemedicine4.png" , replace
+    tabout fac_type telemedicine_service using "${git}/outputs/img/telemedicine4.csv" , style(csv) replace
 
 // Reporting by date
 use "${git}/data/data.dta" , clear
@@ -198,7 +198,7 @@ use "${git}/data/data.dta" , clear
          title("Facilities Reporting Over Time", pos(11) span)) ///
       yscale(r(0)) ylab(#3) xtit("") ytit("")
       
-      graph export "${git}/outputs/reporting.png" , replace
+      graph export "${git}/outputs/img/reporting.png" , replace
       
     
   
@@ -227,7 +227,7 @@ use "${git}/data/data.dta" , clear
     legend(r(1) size(small) symxsize(small) symysize(small) ///
       order(1 "Total OPD" 2 "Total Screened" 3 "Total Presumptive" 4 "Total Diagnosed"))
       
-    graph export "${git}/outputs/state.png" , replace
+    graph export "${git}/outputs/img/state.png" , replace
     
 // Fig: Cascade by State, type (Logarithmic)
 use "${git}/data/data.dta" , clear
@@ -257,7 +257,7 @@ use "${git}/data/data.dta" , clear
     legend(r(1) size(small) symxsize(small) symysize(small) ///
       order(1 "Total Presumptive" 2 "Total Diagnosed")) ysize(6)
       
-    graph export "${git}/outputs/cascade-type.png" , replace
+    graph export "${git}/outputs/img/cascade-type.png" , replace
     
 // Fig: Availability by date
 
@@ -312,7 +312,7 @@ keep if facility_closed_shutdown != .
       xtit("") ytit("")
       
     
-    graph export "${git}/outputs/closures.png" , replace
+    graph export "${git}/outputs/img/closures.png" , replace
 
 
 // End of dofile
