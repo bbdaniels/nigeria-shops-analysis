@@ -66,6 +66,7 @@ use "${git}/data/data.dta" , clear
     legend(c(1) symxsize(small) symysize(small) order(2 "Public" 1 "Private"))
     
     graph export "${git}/outputs/img/treat-fac_type.png" , replace
+    outsheet using "${git}/outputs/data/treat-fac_type.csv" , comma replace
 
 // Diagnosis types
 use "${git}/data/data.dta" , clear
@@ -93,6 +94,7 @@ use "${git}/data/data.dta" , clear
     legend(c(1) symxsize(small) symysize(small) order(3 "Other" 2 "AFB" 1 "Xpert" ))
     
     graph export "${git}/outputs/img/cases-state.png" , replace
+    outsheet using "${git}/outputs/data/cases-state.csv" , comma replace
     
 use "${git}/data/data.dta" , clear
 
@@ -122,6 +124,7 @@ use "${git}/data/data.dta" , clear
     legend(c(1) symxsize(small) symysize(small) order(3 "Other" 2 "AFB" 1 "Xpert" ))
     
     graph export "${git}/outputs/img/cases-fac_type.png" , replace
+    outsheet using "${git}/outputs/data/cases-fac_type.csv" , comma replace
 
 
 // Costs
@@ -200,6 +203,7 @@ use "${git}/data/data.dta" , clear
       yscale(r(0)) ylab(#3) xtit("") ytit("")
       
       graph export "${git}/outputs/img/reporting.png" , replace
+      outsheet using "${git}/outputs/data/reporting.csv" , comma replace
       
     
   
@@ -229,6 +233,7 @@ use "${git}/data/data.dta" , clear
       order(1 "Total OPD" 2 "Total Screened" 3 "Total Presumptive" 4 "Total Diagnosed"))
       
     graph export "${git}/outputs/img/state.png" , replace
+    outsheet using "${git}/outputs/data/state.csv" , comma replace
     
 // Fig: Cascade by State, type (Logarithmic)
 use "${git}/data/data.dta" , clear
@@ -259,6 +264,7 @@ use "${git}/data/data.dta" , clear
       order(1 "Total Presumptive" 2 "Total Diagnosed")) ysize(6)
       
     graph export "${git}/outputs/img/cascade-type.png" , replace
+    outsheet using "${git}/outputs/data/cascade-type.csv" , comma replace
     
 // Fig: Availability by date
 
@@ -314,6 +320,7 @@ keep if facility_closed_shutdown != .
       
     
     graph export "${git}/outputs/img/closures.png" , replace
+    outsheet using "${git}/outputs/data/closures.csv" , comma replace
 
 
 // End of dofile

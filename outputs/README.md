@@ -1,20 +1,20 @@
 # Results
 
-![](img/state.png)
+[![](img/state.png)](data/state.csv)
 
-![](img/cases-state.png)
+[![](img/cases-state.png)](data/cases-state.csv)
 
-![](img/cascade-type.png)
+[![](img/cascade-type.png)](data/cascade-type.csv)
 
-![](img/cases-fac_type.png)
+[![](img/cases-fac_type.png)](data/cases-fac_type.csv)
 
-![](img/treat-state.png)
+[![](img/treat-state.png)](data/treat-state.csv)
 
-![](img/treat-fac_type.png)
+[![](img/treat-fac_type.png)](data/treat-fac_type.csv)
 
-![](img/closures.png)
+[![](img/closures.png)](data/closures.csv)
 
-![](img/reporting.png)
+[![](img/reporting.png)](data/reporting.csv)
 
 ![](img/costs.png)
 

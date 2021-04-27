@@ -1,0 +1,257 @@
+month,year,state,fac_type,attendance_total,t_string,t
+5,2018,"Kano","Clinical Facility",0,"5/2018",May 18
+6,2018,"Kano","Clinical Facility",0,"6/2018",Jun 18
+7,2018,"Kano","Clinical Facility",0,"7/2018",Jul 18
+8,2018,"Kano","Clinical Facility",67,"8/2018",Aug 18
+9,2018,"Kano","Clinical Facility",67,"9/2018",Sep 18
+10,2018,"Kano","Clinical Facility",100,"10/2018",Oct 18
+11,2018,"Kano","Clinical Facility",100,"11/2018",Nov 18
+12,2018,"Kano","Clinical Facility",101,"12/2018",Dec 18
+1,2019,"Kano","Clinical Facility",101,"1/2019",Jan 19
+2,2019,"Kano","Clinical Facility",101,"2/2019",Feb 19
+3,2019,"Kano","Clinical Facility",107,"3/2019",Mar 19
+4,2019,"Kano","Clinical Facility",108,"4/2019",Apr 19
+5,2019,"Kano","Clinical Facility",107,"5/2019",May 19
+6,2019,"Kano","Clinical Facility",108,"6/2019",Jun 19
+7,2019,"Kano","Clinical Facility",107,"7/2019",Jul 19
+8,2019,"Kano","Clinical Facility",108,"8/2019",Aug 19
+9,2019,"Kano","Clinical Facility",108,"9/2019",Sep 19
+10,2019,"Kano","Clinical Facility",108,"10/2019",Oct 19
+11,2019,"Kano","Clinical Facility",108,"11/2019",Nov 19
+12,2019,"Kano","Clinical Facility",121,"12/2019",Dec 19
+1,2020,"Kano","Clinical Facility",205,"1/2020",Jan 20
+2,2020,"Kano","Clinical Facility",205,"2/2020",Feb 20
+3,2020,"Kano","Clinical Facility",205,"3/2020",Mar 20
+4,2020,"Kano","Clinical Facility",1,"4/2020",Apr 20
+5,2020,"Kano","Clinical Facility",1,"5/2020",May 20
+6,2020,"Kano","Clinical Facility",212,"6/2020",Jun 20
+7,2020,"Kano","Clinical Facility",214,"7/2020",Jul 20
+8,2020,"Kano","Clinical Facility",199,"8/2020",Aug 20
+9,2020,"Kano","Clinical Facility",198,"9/2020",Sep 20
+10,2020,"Kano","Clinical Facility",154,"10/2020",Oct 20
+11,2020,"Kano","Clinical Facility",151,"11/2020",Nov 20
+12,2020,"Kano","Clinical Facility",149,"12/2020",Dec 20
+5,2018,"Kano","Community Pharmacy",0,"5/2018",May 18
+6,2018,"Kano","Community Pharmacy",0,"6/2018",Jun 18
+7,2018,"Kano","Community Pharmacy",0,"7/2018",Jul 18
+8,2018,"Kano","Community Pharmacy",0,"8/2018",Aug 18
+9,2018,"Kano","Community Pharmacy",25,"9/2018",Sep 18
+10,2018,"Kano","Community Pharmacy",25,"10/2018",Oct 18
+11,2018,"Kano","Community Pharmacy",25,"11/2018",Nov 18
+12,2018,"Kano","Community Pharmacy",25,"12/2018",Dec 18
+1,2019,"Kano","Community Pharmacy",25,"1/2019",Jan 19
+2,2019,"Kano","Community Pharmacy",25,"2/2019",Feb 19
+3,2019,"Kano","Community Pharmacy",25,"3/2019",Mar 19
+4,2019,"Kano","Community Pharmacy",25,"4/2019",Apr 19
+5,2019,"Kano","Community Pharmacy",25,"5/2019",May 19
+6,2019,"Kano","Community Pharmacy",17,"6/2019",Jun 19
+7,2019,"Kano","Community Pharmacy",26,"7/2019",Jul 19
+8,2019,"Kano","Community Pharmacy",26,"8/2019",Aug 19
+9,2019,"Kano","Community Pharmacy",26,"9/2019",Sep 19
+10,2019,"Kano","Community Pharmacy",26,"10/2019",Oct 19
+11,2019,"Kano","Community Pharmacy",26,"11/2019",Nov 19
+12,2019,"Kano","Community Pharmacy",26,"12/2019",Dec 19
+1,2020,"Kano","Community Pharmacy",26,"1/2020",Jan 20
+2,2020,"Kano","Community Pharmacy",26,"2/2020",Feb 20
+3,2020,"Kano","Community Pharmacy",26,"3/2020",Mar 20
+4,2020,"Kano","Community Pharmacy",0,"4/2020",Apr 20
+5,2020,"Kano","Community Pharmacy",0,"5/2020",May 20
+6,2020,"Kano","Community Pharmacy",26,"6/2020",Jun 20
+7,2020,"Kano","Community Pharmacy",26,"7/2020",Jul 20
+8,2020,"Kano","Community Pharmacy",18,"8/2020",Aug 20
+9,2020,"Kano","Community Pharmacy",18,"9/2020",Sep 20
+10,2020,"Kano","Community Pharmacy",13,"10/2020",Oct 20
+11,2020,"Kano","Community Pharmacy",13,"11/2020",Nov 20
+12,2020,"Kano","Community Pharmacy",20,"12/2020",Dec 20
+5,2018,"Kano","Lab",0,"5/2018",May 18
+6,2018,"Kano","Lab",0,"6/2018",Jun 18
+7,2018,"Kano","Lab",0,"7/2018",Jul 18
+8,2018,"Kano","Lab",0,"8/2018",Aug 18
+9,2018,"Kano","Lab",29,"9/2018",Sep 18
+10,2018,"Kano","Lab",31,"10/2018",Oct 18
+11,2018,"Kano","Lab",31,"11/2018",Nov 18
+12,2018,"Kano","Lab",30,"12/2018",Dec 18
+1,2019,"Kano","Lab",30,"1/2019",Jan 19
+2,2019,"Kano","Lab",30,"2/2019",Feb 19
+3,2019,"Kano","Lab",30,"3/2019",Mar 19
+4,2019,"Kano","Lab",32,"4/2019",Apr 19
+5,2019,"Kano","Lab",27,"5/2019",May 19
+6,2019,"Kano","Lab",32,"6/2019",Jun 19
+7,2019,"Kano","Lab",33,"7/2019",Jul 19
+8,2019,"Kano","Lab",30,"8/2019",Aug 19
+9,2019,"Kano","Lab",30,"9/2019",Sep 19
+10,2019,"Kano","Lab",30,"10/2019",Oct 19
+11,2019,"Kano","Lab",30,"11/2019",Nov 19
+12,2019,"Kano","Lab",30,"12/2019",Dec 19
+1,2020,"Kano","Lab",30,"1/2020",Jan 20
+2,2020,"Kano","Lab",30,"2/2020",Feb 20
+3,2020,"Kano","Lab",30,"3/2020",Mar 20
+4,2020,"Kano","Lab",30,"4/2020",Apr 20
+5,2020,"Kano","Lab",30,"5/2020",May 20
+6,2020,"Kano","Lab",30,"6/2020",Jun 20
+7,2020,"Kano","Lab",30,"7/2020",Jul 20
+8,2020,"Kano","Lab",25,"8/2020",Aug 20
+9,2020,"Kano","Lab",25,"9/2020",Sep 20
+10,2020,"Kano","Lab",18,"10/2020",Oct 20
+11,2020,"Kano","Lab",17,"11/2020",Nov 20
+12,2020,"Kano","Lab",16,"12/2020",Dec 20
+5,2018,"Kano","PPMV",0,"5/2018",May 18
+6,2018,"Kano","PPMV",0,"6/2018",Jun 18
+7,2018,"Kano","PPMV",0,"7/2018",Jul 18
+8,2018,"Kano","PPMV",0,"8/2018",Aug 18
+9,2018,"Kano","PPMV",246,"9/2018",Sep 18
+10,2018,"Kano","PPMV",264,"10/2018",Oct 18
+11,2018,"Kano","PPMV",306,"11/2018",Nov 18
+12,2018,"Kano","PPMV",309,"12/2018",Dec 18
+1,2019,"Kano","PPMV",354,"1/2019",Jan 19
+2,2019,"Kano","PPMV",370,"2/2019",Feb 19
+3,2019,"Kano","PPMV",381,"3/2019",Mar 19
+4,2019,"Kano","PPMV",393,"4/2019",Apr 19
+5,2019,"Kano","PPMV",401,"5/2019",May 19
+6,2019,"Kano","PPMV",396,"6/2019",Jun 19
+7,2019,"Kano","PPMV",393,"7/2019",Jul 19
+8,2019,"Kano","PPMV",399,"8/2019",Aug 19
+9,2019,"Kano","PPMV",431,"9/2019",Sep 19
+10,2019,"Kano","PPMV",459,"10/2019",Oct 19
+11,2019,"Kano","PPMV",462,"11/2019",Nov 19
+12,2019,"Kano","PPMV",467,"12/2019",Dec 19
+1,2020,"Kano","PPMV",461,"1/2020",Jan 20
+2,2020,"Kano","PPMV",549,"2/2020",Feb 20
+3,2020,"Kano","PPMV",561,"3/2020",Mar 20
+4,2020,"Kano","PPMV",558,"4/2020",Apr 20
+5,2020,"Kano","PPMV",563,"5/2020",May 20
+6,2020,"Kano","PPMV",551,"6/2020",Jun 20
+7,2020,"Kano","PPMV",563,"7/2020",Jul 20
+8,2020,"Kano","PPMV",615,"8/2020",Aug 20
+9,2020,"Kano","PPMV",634,"9/2020",Sep 20
+10,2020,"Kano","PPMV",454,"10/2020",Oct 20
+11,2020,"Kano","PPMV",435,"11/2020",Nov 20
+12,2020,"Kano","PPMV",427,"12/2020",Dec 20
+5,2018,"Lagos","Clinical Facility",139,"5/2018",May 18
+6,2018,"Lagos","Clinical Facility",139,"6/2018",Jun 18
+7,2018,"Lagos","Clinical Facility",139,"7/2018",Jul 18
+8,2018,"Lagos","Clinical Facility",139,"8/2018",Aug 18
+9,2018,"Lagos","Clinical Facility",140,"9/2018",Sep 18
+10,2018,"Lagos","Clinical Facility",179,"10/2018",Oct 18
+11,2018,"Lagos","Clinical Facility",268,"11/2018",Nov 18
+12,2018,"Lagos","Clinical Facility",409,"12/2018",Dec 18
+1,2019,"Lagos","Clinical Facility",422,"1/2019",Jan 19
+2,2019,"Lagos","Clinical Facility",427,"2/2019",Feb 19
+3,2019,"Lagos","Clinical Facility",427,"3/2019",Mar 19
+4,2019,"Lagos","Clinical Facility",429,"4/2019",Apr 19
+5,2019,"Lagos","Clinical Facility",434,"5/2019",May 19
+6,2019,"Lagos","Clinical Facility",433,"6/2019",Jun 19
+7,2019,"Lagos","Clinical Facility",427,"7/2019",Jul 19
+8,2019,"Lagos","Clinical Facility",428,"8/2019",Aug 19
+9,2019,"Lagos","Clinical Facility",435,"9/2019",Sep 19
+10,2019,"Lagos","Clinical Facility",430,"10/2019",Oct 19
+11,2019,"Lagos","Clinical Facility",432,"11/2019",Nov 19
+12,2019,"Lagos","Clinical Facility",433,"12/2019",Dec 19
+1,2020,"Lagos","Clinical Facility",433,"1/2020",Jan 20
+2,2020,"Lagos","Clinical Facility",433,"2/2020",Feb 20
+3,2020,"Lagos","Clinical Facility",433,"3/2020",Mar 20
+4,2020,"Lagos","Clinical Facility",433,"4/2020",Apr 20
+5,2020,"Lagos","Clinical Facility",432,"5/2020",May 20
+6,2020,"Lagos","Clinical Facility",433,"6/2020",Jun 20
+7,2020,"Lagos","Clinical Facility",433,"7/2020",Jul 20
+8,2020,"Lagos","Clinical Facility",439,"8/2020",Aug 20
+9,2020,"Lagos","Clinical Facility",439,"9/2020",Sep 20
+10,2020,"Lagos","Clinical Facility",407,"10/2020",Oct 20
+11,2020,"Lagos","Clinical Facility",410,"11/2020",Nov 20
+12,2020,"Lagos","Clinical Facility",406,"12/2020",Dec 20
+5,2018,"Lagos","Community Pharmacy",0,"5/2018",May 18
+6,2018,"Lagos","Community Pharmacy",0,"6/2018",Jun 18
+7,2018,"Lagos","Community Pharmacy",0,"7/2018",Jul 18
+8,2018,"Lagos","Community Pharmacy",0,"8/2018",Aug 18
+9,2018,"Lagos","Community Pharmacy",16,"9/2018",Sep 18
+10,2018,"Lagos","Community Pharmacy",54,"10/2018",Oct 18
+11,2018,"Lagos","Community Pharmacy",87,"11/2018",Nov 18
+12,2018,"Lagos","Community Pharmacy",120,"12/2018",Dec 18
+1,2019,"Lagos","Community Pharmacy",138,"1/2019",Jan 19
+2,2019,"Lagos","Community Pharmacy",106,"2/2019",Feb 19
+3,2019,"Lagos","Community Pharmacy",108,"3/2019",Mar 19
+4,2019,"Lagos","Community Pharmacy",117,"4/2019",Apr 19
+5,2019,"Lagos","Community Pharmacy",115,"5/2019",May 19
+6,2019,"Lagos","Community Pharmacy",121,"6/2019",Jun 19
+7,2019,"Lagos","Community Pharmacy",131,"7/2019",Jul 19
+8,2019,"Lagos","Community Pharmacy",133,"8/2019",Aug 19
+9,2019,"Lagos","Community Pharmacy",158,"9/2019",Sep 19
+10,2019,"Lagos","Community Pharmacy",138,"10/2019",Oct 19
+11,2019,"Lagos","Community Pharmacy",138,"11/2019",Nov 19
+12,2019,"Lagos","Community Pharmacy",139,"12/2019",Dec 19
+1,2020,"Lagos","Community Pharmacy",138,"1/2020",Jan 20
+2,2020,"Lagos","Community Pharmacy",138,"2/2020",Feb 20
+3,2020,"Lagos","Community Pharmacy",137,"3/2020",Mar 20
+4,2020,"Lagos","Community Pharmacy",133,"4/2020",Apr 20
+5,2020,"Lagos","Community Pharmacy",133,"5/2020",May 20
+6,2020,"Lagos","Community Pharmacy",133,"6/2020",Jun 20
+7,2020,"Lagos","Community Pharmacy",133,"7/2020",Jul 20
+8,2020,"Lagos","Community Pharmacy",133,"8/2020",Aug 20
+9,2020,"Lagos","Community Pharmacy",133,"9/2020",Sep 20
+10,2020,"Lagos","Community Pharmacy",112,"10/2020",Oct 20
+11,2020,"Lagos","Community Pharmacy",111,"11/2020",Nov 20
+12,2020,"Lagos","Community Pharmacy",109,"12/2020",Dec 20
+5,2018,"Lagos","Lab",0,"5/2018",May 18
+6,2018,"Lagos","Lab",0,"6/2018",Jun 18
+7,2018,"Lagos","Lab",0,"7/2018",Jul 18
+8,2018,"Lagos","Lab",0,"8/2018",Aug 18
+9,2018,"Lagos","Lab",92,"9/2018",Sep 18
+10,2018,"Lagos","Lab",93,"10/2018",Oct 18
+11,2018,"Lagos","Lab",99,"11/2018",Nov 18
+12,2018,"Lagos","Lab",106,"12/2018",Dec 18
+1,2019,"Lagos","Lab",104,"1/2019",Jan 19
+2,2019,"Lagos","Lab",109,"2/2019",Feb 19
+3,2019,"Lagos","Lab",110,"3/2019",Mar 19
+4,2019,"Lagos","Lab",109,"4/2019",Apr 19
+5,2019,"Lagos","Lab",117,"5/2019",May 19
+6,2019,"Lagos","Lab",119,"6/2019",Jun 19
+7,2019,"Lagos","Lab",114,"7/2019",Jul 19
+8,2019,"Lagos","Lab",116,"8/2019",Aug 19
+9,2019,"Lagos","Lab",118,"9/2019",Sep 19
+10,2019,"Lagos","Lab",118,"10/2019",Oct 19
+11,2019,"Lagos","Lab",120,"11/2019",Nov 19
+12,2019,"Lagos","Lab",120,"12/2019",Dec 19
+1,2020,"Lagos","Lab",118,"1/2020",Jan 20
+2,2020,"Lagos","Lab",118,"2/2020",Feb 20
+3,2020,"Lagos","Lab",118,"3/2020",Mar 20
+4,2020,"Lagos","Lab",118,"4/2020",Apr 20
+5,2020,"Lagos","Lab",117,"5/2020",May 20
+6,2020,"Lagos","Lab",118,"6/2020",Jun 20
+7,2020,"Lagos","Lab",116,"7/2020",Jul 20
+8,2020,"Lagos","Lab",117,"8/2020",Aug 20
+9,2020,"Lagos","Lab",117,"9/2020",Sep 20
+10,2020,"Lagos","Lab",109,"10/2020",Oct 20
+11,2020,"Lagos","Lab",107,"11/2020",Nov 20
+12,2020,"Lagos","Lab",105,"12/2020",Dec 20
+5,2018,"Lagos","PPMV",0,"5/2018",May 18
+6,2018,"Lagos","PPMV",0,"6/2018",Jun 18
+7,2018,"Lagos","PPMV",0,"7/2018",Jul 18
+8,2018,"Lagos","PPMV",0,"8/2018",Aug 18
+9,2018,"Lagos","PPMV",43,"9/2018",Sep 18
+10,2018,"Lagos","PPMV",251,"10/2018",Oct 18
+11,2018,"Lagos","PPMV",383,"11/2018",Nov 18
+12,2018,"Lagos","PPMV",402,"12/2018",Dec 18
+1,2019,"Lagos","PPMV",422,"1/2019",Jan 19
+2,2019,"Lagos","PPMV",398,"2/2019",Feb 19
+3,2019,"Lagos","PPMV",410,"3/2019",Mar 19
+4,2019,"Lagos","PPMV",411,"4/2019",Apr 19
+5,2019,"Lagos","PPMV",411,"5/2019",May 19
+6,2019,"Lagos","PPMV",421,"6/2019",Jun 19
+7,2019,"Lagos","PPMV",397,"7/2019",Jul 19
+8,2019,"Lagos","PPMV",402,"8/2019",Aug 19
+9,2019,"Lagos","PPMV",472,"9/2019",Sep 19
+10,2019,"Lagos","PPMV",413,"10/2019",Oct 19
+11,2019,"Lagos","PPMV",412,"11/2019",Nov 19
+12,2019,"Lagos","PPMV",412,"12/2019",Dec 19
+1,2020,"Lagos","PPMV",404,"1/2020",Jan 20
+2,2020,"Lagos","PPMV",403,"2/2020",Feb 20
+3,2020,"Lagos","PPMV",403,"3/2020",Mar 20
+4,2020,"Lagos","PPMV",399,"4/2020",Apr 20
+5,2020,"Lagos","PPMV",399,"5/2020",May 20
+6,2020,"Lagos","PPMV",399,"6/2020",Jun 20
+7,2020,"Lagos","PPMV",399,"7/2020",Jul 20
+8,2020,"Lagos","PPMV",398,"8/2020",Aug 20
+9,2020,"Lagos","PPMV",390,"9/2020",Sep 20
+10,2020,"Lagos","PPMV",269,"10/2020",Oct 20
+11,2020,"Lagos","PPMV",269,"11/2020",Nov 20
+12,2020,"Lagos","PPMV",262,"12/2020",Dec 20
