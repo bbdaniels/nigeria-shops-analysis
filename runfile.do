@@ -36,6 +36,7 @@ use "${git}/data/data.dta" , clear
     legend(c(1) symxsize(small) symysize(small) order(2 "Public" 1 "Private" ))
     
     graph export "${git}/outputs/img/treat-state.png" , replace
+    outsheet using "${git}/outputs/data/treat-state.csv" , comma replace
     
 use "${git}/data/data.dta" , clear
 

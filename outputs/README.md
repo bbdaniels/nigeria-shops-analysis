@@ -1,6 +1,6 @@
 # Results
 
-![](img/state.png)
+[![](img/state.png)](data/treat-state.csv)
 
 ![](img/cases-state.png)
 
