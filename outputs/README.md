@@ -2,7 +2,11 @@
 
 ![](state.png)
 
+![](cases-state.png)
+
 ![](cascade-type.png)
+
+![](cases-fac_type.png)
 
 ![](closures.png)
 
