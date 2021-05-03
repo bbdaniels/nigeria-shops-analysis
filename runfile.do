@@ -8,12 +8,16 @@ global git "/Users/bbdaniels/GitHub/nigeria-shops-analysis"
 use "${box}/SHOPS Plus Progam Data 2018-2021.dta" , clear
 iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
 drop if year == 2021
+
+  egen cases_private = rsum(cases_starttrt_pvthosp_total ontreat_pvtfac_total)
+  egen cases_public = rsum(ref_pubhosp_total cases_starttrt_pubhosp_total)
+
 save "${git}/data/data.dta" , replace
 
 // TX types
 use "${git}/data/data.dta" , clear
 
-  collapse (sum) cases_starttrt_pvthosp_total cases_starttrt_pubhosp_total ///
+  collapse (sum) cases_private cases_public ///
     , by(year month state) fast
     
       gen t_string = string(month) + "/" + string(year)
@@ -31,7 +35,7 @@ use "${git}/data/data.dta" , clear
           local lab = `"`lab'"' + `" `x' `"`l'"' "'
         }
 
-  graph bar (sum) cases_starttrt_pvthosp_total cases_starttrt_pubhosp_total ///
+  graph bar (sum)  cases_private cases_public ///
   , stack over(t , relabel(`lab') ) by(state , title("Treatment") c(1) legend( pos(3))) ///
     legend(c(1) symxsize(small) symysize(small) order(2 "Public" 1 "Private" ))
     
@@ -43,7 +47,7 @@ use "${git}/data/data.dta" , clear
   replace fac_type = "Clinical Facility" if fac_type == "Clinical Faclity"
   drop if fac_type == "Hospital" 
 
-  collapse (sum) cases_starttrt_pvthosp_total cases_starttrt_pubhosp_total ///
+  collapse (sum)  cases_private cases_public ///
     , by(year month state fac_type) fast
     
       gen t_string = string(month) + "/" + string(year)
@@ -61,7 +65,7 @@ use "${git}/data/data.dta" , clear
           local lab = `"`lab'"' + `" `x' `"`l'"' "'
         }
 
-  graph bar (sum) cases_starttrt_pvthosp_total cases_starttrt_pubhosp_total ///
+  graph bar (sum) cases_private cases_public ///
   , stack over(t , relabel(`lab') ) by(state fac_type , title("Treatment") c(2) iscale(*.55) colfirst ixaxes yrescale legend( pos(3))) ///
     legend(c(1) symxsize(small) symysize(small) order(2 "Public" 1 "Private"))
     
