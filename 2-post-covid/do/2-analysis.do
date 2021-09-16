@@ -11,12 +11,19 @@ use "${git}/data/provider-survey.dta" , clear
     graph export "${git}/outputs/img/fac-type.png", replace
     
   replace hf_inpatient = . if hf_inpatient == 0
-  graph box hf_inpatient hf_opt ///
+  graph box hf_inpatient hf_opt  ///
   , scale(0.7) over(hf_type_long, label(angle(30))) over(state_name) ///
     ytit(" ") ylab(1 10 100 1000 10000) yscale(log) title("Facility size and monthly patient load" , pos(11) span) ///
-    legend(on c(2) pos(6) ring(1) order(1 "Inpatient Beds" 2 "Monthly Outpatients"))
+    legend(on c(2) pos(6) ring(1) order(1 "Inpatient Beds" 2 "Monthly Outpatients" ))
     
     graph export "${git}/outputs/img/fac-size.png", replace
+    
+  replace hf_staff = . if hf_staff == 0
+  scatter hf_opt hf_staff  ///
+    , yscale(log) xscale(log) by(hf_type, rescale ixaxes iyaxes title("Facility size and staff" , pos(11) span)) ///
+      ylab(1 10 100 1000 10000) xlab(1 5 25 125) 
+      
+      graph export "${git}/outputs/img/fac-size-2.png", replace
     
 // Testing
 use "${git}/data/provider-survey.dta" , clear
