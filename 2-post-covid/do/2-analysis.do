@@ -60,5 +60,9 @@ use "${git}/data/provider-survey.dta" , clear
       3 "At-Home Testing" 4 "No Testing" 5 "Private Laboratory")) scale(0.7)
       
     graph export "${git}/outputs/img/tb-telemed-test.png", replace
+    
+// Pricing
+
+
 
 // End

@@ -39,13 +39,13 @@ qui foreach var of varlist * {
 // Data Cleaning
 replace hf_opt = . if hf_opt <= 0
 
-lab var tb_covid yesno
+lab val tb_covid yesno
   replace tb_covid = tb_covid - 1
-lab var covid_screen yesno
+lab val covid_screen yesno
   replace covid_screen = covid_screen != 1 if !missing(covid_screen)
-lab var tb_gx yesno
+lab val tb_gx yesno
   replace tb_gx = tb_gx != 1 if !missing(tb_gx)
-lab var covid_gx yesno
+lab val covid_gx yesno
   replace covid_gx = covid_gx > 2 if !missing(covid_gx)
 
 // Save
