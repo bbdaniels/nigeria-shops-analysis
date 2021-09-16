@@ -10,6 +10,14 @@ use "${git}/data/provider-survey.dta" , clear
     
     graph export "${git}/outputs/img/fac-type.png", replace
     
+  replace hf_inpatient = . if hf_inpatient == 0
+  graph box hf_inpatient hf_opt ///
+  , scale(0.7) over(hf_type_long, label(angle(30))) over(state_name) ///
+    ytit(" ") ylab(1 10 100 1000 10000) yscale(log) title("Facility size and monthly patient load" , pos(11) span) ///
+    legend(on c(2) pos(6) ring(1) order(1 "Inpatient Beds" 2 "Monthly Outpatients"))
+    
+    graph export "${git}/outputs/img/fac-size.png", replace
+    
 // Testing
 use "${git}/data/provider-survey.dta" , clear
   replace tb_covid = tb_covid - 1
@@ -32,7 +40,6 @@ use "${git}/data/provider-survey.dta" , clear
       3 "COVID GX" )) scale(0.7)
       
       graph export "${git}/outputs/img/test-covid.png", replace
-
 
 // Telemedicine for TB
 use "${git}/data/provider-survey.dta" , clear

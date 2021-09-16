@@ -1,6 +1,7 @@
 
 
 ![](img/fac-type.png)
+![](img/fac-size.png)
 
 
 ![](img/test-tb.png)

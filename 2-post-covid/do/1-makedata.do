@@ -36,6 +36,13 @@ qui foreach var of varlist * {
   }
 }
 
+// Data Cleaning
+replace hf_opt = . if hf_opt <= 0
+
+
+
+// Save
+
 order * , alpha
 order hfid state* lga* hf* , first
 
@@ -43,7 +50,6 @@ gen n = 1
   lab var n "COUNTER"
 
 compress
-
 save "${git}/data/provider-survey.dta" , replace
 
 // End
