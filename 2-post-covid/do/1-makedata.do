@@ -39,5 +39,11 @@ qui foreach var of varlist * {
 order * , alpha
 order hfid state* lga* hf* , first
 
+gen n = 1
+  lab var n "COUNTER"
+
+compress
+
+save "${git}/data/provider-survey.dta" , replace
 
 // End
