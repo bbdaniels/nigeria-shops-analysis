@@ -13,9 +13,9 @@ use "${git}/data/provider-survey.dta" , clear
 // Testing
 use "${git}/data/provider-survey.dta" , clear
   replace tb_covid = tb_covid - 1
-  replace covid_screen = covid_screen != 1
-  replace tb_gx = tb_gx != 1
-  replace covid_gx = covid_gx > 2
+  replace covid_screen = covid_screen != 1 if !missing(covid_screen)
+  replace tb_gx = tb_gx != 1 if !missing(tb_gx)
+  replace covid_gx = covid_gx > 2 if !missing(covid_gx)
   
   graph hbar (mean) tb_afb tb_cxr tb_gx tb_hiv ///
   , over(hf_type_long) ///
