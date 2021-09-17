@@ -40,6 +40,9 @@ use "${git}/data/provider-survey.dta" , clear
       ylab(1 10 100 1000 10000) xlab(1 5 25 125) legend( r(1) order(1 "Backup" 2 "Non Network" 3 "Shops Plus")) 
       
       graph export "${git}/outputs/img/fac-size-2.png", replace
+      
+   graph bar hf_respondent ///
+   , over(hf_type_shops) asy stack over(hf_type_long) 
     
 // Testing
 use "${git}/data/provider-survey.dta" , clear
