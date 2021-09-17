@@ -24,7 +24,7 @@ use "${git}/data/provider-survey.dta" , clear
       
       graph export "${git}/outputs/img/covid-close-why.png", replace
       
-  // Permanent closures
+  // Neighborhood closures
   use "${git}/data/provider-survey.dta" , clear
     recode covid_close_2 (4=0) 
       lab def covid_close_2 0 "< 25%" , modify
