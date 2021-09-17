@@ -38,6 +38,9 @@ qui foreach var of varlist * {
     lab var `var' "`l'"
     drop temp
   }
+  else {
+    cap replace `var' = . if `var' < 0
+  }
 }
 
 // Data Cleaning

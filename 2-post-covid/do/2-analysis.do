@@ -43,6 +43,13 @@ use "${git}/data/provider-survey.dta" , clear
       
    graph bar hf_respondent ///
    , over(hf_type_shops) asy stack over(hf_type_long) 
+   
+// Post covid changes
+use "${git}/data/provider-survey.dta" , clear
+  graph hbar ///
+    covid_ppe covid_ppe_1 covid_ppe_2 covid_ppe_3 covid_ppe_4 covid_ppe_5 covid_ppe_6 ///
+    if hf_type_shops > 1 & !missing(hf_type_shops) ///
+    , legend(on) over(hf_type_shops)
     
 // Testing
 use "${git}/data/provider-survey.dta" , clear
@@ -61,7 +68,17 @@ use "${git}/data/provider-survey.dta" , clear
     legend(on c(2) pos(6) ring(1) order(0 "Facilities offering:" 1 "COVID Screening" 2 "Bi-directional Screening" ///
       3 "COVID GX" )) scale(0.7)
       
-      graph export "${git}/outputs/img/test-covid.png", replace
+    graph export "${git}/outputs/img/test-covid.png", replace
+      
+  graph hbar (mean) ///
+    fee_registration tb_afb_price tb_gx_price tb_cxr_price tb_hiv_price  ///
+    if hf_type_shops != 1 ///
+  , over(hf_type) by(hf_type_shops , legend(on pos(3)) title("Prices", span pos(11))) ///
+    legend(c(1) symxsize(small) order(1 "Registration" 2 "AFB" 3 "GX" 4 "CXR" 5 "HIV")) ///
+    blab(bar, format(%9.0f)) scale(0.7)
+    
+    graph export "${git}/outputs/img/test-prices.png", replace
+  
 
 // Telemedicine for TB
 use "${git}/data/provider-survey.dta" , clear
@@ -79,6 +96,26 @@ use "${git}/data/provider-survey.dta" , clear
       3 "At-Home Testing" 4 "No Testing" 5 "Private Laboratory")) scale(0.7)
       
     graph export "${git}/outputs/img/tb-telemed-test.png", replace
+    
+  replace tb_telemed_pos = . if tb_telemed_pos == 0
+  replace tb_telemed_n = . if tb_telemed_n == 0
+  tw ///
+    (scatter tb_telemed_pos tb_telemed_n if hf_type_shops == 1 ///
+      , m(X) mlw(vthin) mc(navy) jitter(1))  ///
+    (scatter tb_telemed_pos tb_telemed_n if hf_type_shops == 2 ///
+      , m(Oh) mlw(vthin) mc(red%50) jitter(1))  ///
+    (scatter tb_telemed_pos tb_telemed_n if hf_type_shops == 3 ///
+      , m(Oh) mlw(vthin) mc(black%50) jitter(1))  ///
+    (function x , range(1 100) lw(thin) lc(black)) ///
+    , yscale(log) xscale(log) ///
+      by(hf_type, rescale ixaxes iyaxes ///
+        title("TB Telemedicine Yield" , pos(11) span) ///
+        legend(on r(1) pos(12) order(1 "Backup" 2 "Non Network" 3 "Shops Plus")) ) ///
+      ylab(1 10 100) xlab(1 10 100) legend( r(1) order(1 "Backup" 2 "Non Network" 3 "Shops Plus")) ///
+      xtit("Number of Telemedicine TB Patients Screened In") ytit("Number Tested Positive")
+          
+    graph export "${git}/outputs/img/tb-telemed-yield.png", replace
+
     
 // Pricing
 
