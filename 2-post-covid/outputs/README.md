@@ -1,7 +1,9 @@
 
 
 ![](img/fac-type.png)
+![](img/fac-type-shops.png)
 ![](img/fac-size.png)
+![](img/fac-size-2.png)
 
 
 ![](img/test-tb.png)

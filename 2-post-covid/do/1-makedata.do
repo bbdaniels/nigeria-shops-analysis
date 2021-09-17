@@ -6,6 +6,10 @@ insheet using ///
 
 iecodebook apply using "${box}/provider-survey-codebook.xlsx" ///
   , drop
+  
+// Values
+
+replace hf_type_long = "PPMV" if regexm(hf_type_long,"Patent")
 
 // Clean data types
 

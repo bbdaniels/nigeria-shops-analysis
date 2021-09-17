@@ -10,6 +10,13 @@ use "${git}/data/provider-survey.dta" , clear
     
     graph export "${git}/outputs/img/fac-type.png", replace
     
+  graph hbar (sum) n ///
+  , over(hf_type_shops) asy stack over(hf_type_long) over(state_name) ///
+    ytit(" ") title("Sample description" , pos(11) span) ///
+    legend(on c(1) ring(0) symxsize(small) pos(2)) scale(0.7)
+    
+    graph export "${git}/outputs/img/fac-type-shops.png", replace
+    
   replace hf_inpatient = . if hf_inpatient == 0
   graph box hf_inpatient hf_opt  ///
   , scale(0.7) over(hf_type_long, label(angle(30))) over(state_name) ///
