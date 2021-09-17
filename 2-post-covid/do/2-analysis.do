@@ -71,13 +71,25 @@ use "${git}/data/provider-survey.dta" , clear
     graph export "${git}/outputs/img/test-covid.png", replace
       
   graph hbar (mean) ///
-    fee_registration tb_afb_price tb_gx_price tb_cxr_price tb_hiv_price  ///
+    fee_registration fee_consult tb_afb_price tb_gx_price tb_cxr_price tb_hiv_price  ///
     if hf_type_shops != 1 ///
   , over(hf_type) by(hf_type_shops , legend(on pos(3)) title("Prices", span pos(11))) ///
-    legend(c(1) symxsize(small) order(1 "Registration" 2 "AFB" 3 "GX" 4 "CXR" 5 "HIV")) ///
+    legend(c(1) symxsize(small) order(1 "Registration" 2 "Consultation" 3 "AFB" 4 "GX" 5 "CXR" 6 "HIV")) ///
     blab(bar, format(%9.0f)) scale(0.7)
     
     graph export "${git}/outputs/img/test-prices.png", replace
+    
+  local x = 0
+  qui foreach var of varlist *change {
+    local ++x
+    local lab : var lab `var'
+    graph hbar , over(`var') title("`lab'", size(vsmall) span pos(11)) nodraw blab(bar, format(%9.1f))
+    graph save "${git}/outputs/img/changes-`x'.gph" , replace
+    local graphs `" `graphs' "${git}/outputs/img/changes-`x'.gph" "'
+  }
+  
+  graph combine `graphs' , c(1) imargin(0)
+    graph export "${git}/outputs/img/test-prices-change.png", replace
   
 
 // Telemedicine for TB
@@ -115,10 +127,6 @@ use "${git}/data/provider-survey.dta" , clear
       xtit("Number of Telemedicine TB Patients Screened In") ytit("Number Tested Positive")
           
     graph export "${git}/outputs/img/tb-telemed-yield.png", replace
-
-    
-// Pricing
-
 
 
 // End

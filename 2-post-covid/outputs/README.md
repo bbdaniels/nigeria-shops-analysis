@@ -10,6 +10,7 @@
 ![](img/test-tb.png)
 ![](img/test-covid.png)
 ![](img/test-prices.png)
+![](img/test-prices-change.png)
 
 
 ![](img/tb-telemed.png)
