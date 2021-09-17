@@ -1,5 +1,7 @@
 // Make data for post covid provider survey
 
+clear all
+
 insheet using ///
   "${box}/provider-survey-data.csv" ///
   , clear 
@@ -13,7 +15,7 @@ replace hf_type_long = "PPMV" if regexm(hf_type_long,"Patent")
 
 // Clean data types
 
-qui foreach var of varlist close* {
+qui foreach var of varlist close_* {
   local l : var l `var'
   ren `var' temp
   gen `var' = date(temp,"DMY")
@@ -25,6 +27,11 @@ qui foreach var of varlist close* {
 qui foreach var of varlist * {
   local t : type `var'
   local l : var l `var'
+  if "`t'" == "str21" {
+    replace `var' = "" if length(`var') > 4
+    compress `var'
+    local t : type `var'
+  }
   if "`t'" == "str3" {
     ren `var' temp
     gen `var' = (temp=="Yes") if temp != ""
@@ -42,6 +49,11 @@ qui foreach var of varlist * {
     cap replace `var' = . if `var' < 0
   }
 }
+
+// Labelling
+lab def hf_type 1 "Clinic" 2 "Pharmacy" 3 "Laboratory" 4 "PPMV" , replace
+
+lab val closed_* yesno
 
 // Data Cleaning
 replace hf_opt = . if hf_opt <= 0

@@ -1,6 +1,5 @@
 // Nigeria post covid survey analysis
 
-
 // Sample description
 use "${git}/data/provider-survey.dta" , clear
   
@@ -43,13 +42,6 @@ use "${git}/data/provider-survey.dta" , clear
       
    graph bar hf_respondent ///
    , over(hf_type_shops) asy stack over(hf_type_long) 
-   
-// Post covid changes
-use "${git}/data/provider-survey.dta" , clear
-  graph hbar ///
-    covid_ppe covid_ppe_1 covid_ppe_2 covid_ppe_3 covid_ppe_4 covid_ppe_5 covid_ppe_6 ///
-    if hf_type_shops > 1 & !missing(hf_type_shops) ///
-    , legend(on) over(hf_type_shops)
     
 // Testing
 use "${git}/data/provider-survey.dta" , clear
@@ -77,20 +69,7 @@ use "${git}/data/provider-survey.dta" , clear
     legend(c(1) symxsize(small) order(1 "Registration" 2 "Consultation" 3 "AFB" 4 "GX" 5 "CXR" 6 "HIV")) ///
     blab(bar, format(%9.0f)) scale(0.7)
     
-    graph export "${git}/outputs/img/test-prices.png", replace
-    
-  local x = 0
-  qui foreach var of varlist *change {
-    local ++x
-    local lab : var lab `var'
-    graph hbar , over(`var') title("`lab'", size(vsmall) span pos(11)) nodraw blab(bar, format(%9.1f))
-    graph save "${git}/outputs/img/changes-`x'.gph" , replace
-    local graphs `" `graphs' "${git}/outputs/img/changes-`x'.gph" "'
-  }
-  
-  graph combine `graphs' , c(1) imargin(0)
-    graph export "${git}/outputs/img/test-prices-change.png", replace
-  
+    graph export "${git}/outputs/img/test-prices.png", replace  
 
 // Telemedicine for TB
 use "${git}/data/provider-survey.dta" , clear
