@@ -1,5 +1,7 @@
 // Covid Related Disruptions
 use "${git}/data/provider-survey.dta" , clear
+
+  // Closure map
   bys hf_type: gen N = _n
   tw ///
     (rspike close_start_1 close_end_1 N , hor lw(vthin) lc(black)) ///
@@ -12,6 +14,36 @@ use "${git}/data/provider-survey.dta" , clear
     ylab(none) xlab(,format(%tdMon_YY)) ytit("") xtit("") xoverhang
     
     graph export "${git}/outputs/img/covid-close-all.png", replace
+  
+  // Closure reasons
+  graph bar ///
+    closed_lockdown closed_patients closed_protest closed_staff closed_supplies ///
+    , over(hf_type) legend(on) blab(bar) title("Covid closure reasons" , pos(11) span) ///
+      legend(r(1) pos(12) symxsize(small) order(1 "Lockdown" 2 "Low Demand" 3 "Protests" 4 "Staff Shortage" 5 "Supply Shortage")) ///
+      blab(bar, format(%9.1f)) scale(0.7) perc
+      
+      graph export "${git}/outputs/img/covid-close-why.png", replace
+      
+  // Permanent closures
+  use "${git}/data/provider-survey.dta" , clear
+    recode covid_close_2 (4=0) 
+      lab def covid_close_2 0 "< 25%" , modify
+    recode covid_close_4 (3=0) 
+      lab def covid_close_4 0 "< 25%" , modify
+      
+    local x = 0
+    qui foreach var of varlist covid_close_1 covid_close_2 covid_close_3 covid_close_4 {
+      local ++x
+      local lab : var lab `var'
+      graph hbar , over(`var') scale(0.7) ///
+        title("`lab'", span pos(11)) nodraw blab(bar, format(%9.1f))
+      graph save "${git}/outputs/img/changes-`x'.gph" , replace
+      local graphs `" `graphs' "${git}/outputs/img/changes-`x'.gph" "'
+    }
+    
+    graph combine `graphs' , imargin(medium) colf title("In your neighborhood...", span pos(11))
+    graph export "${git}/outputs/img/covid-close-count.png", replace
+
 
 // Post covid changes
 use "${git}/data/provider-survey.dta" , clear
