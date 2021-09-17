@@ -43,6 +43,27 @@ use "${git}/data/provider-survey.dta" , clear
     
     graph combine `graphs' , imargin(medium) colf title("In your neighborhood...", span pos(11))
     graph export "${git}/outputs/img/covid-close-count.png", replace
+    
+// Service changes
+use "${git}/data/provider-survey.dta" , clear
+  
+  // Long term
+  betterbar  ///
+    covid_disruption_l_1 covid_disruption_l_2 covid_disruption_l_3 ///
+    covid_disruption_l_4 covid_disruption_l_5 covid_disruption_l_6 ///
+  , pct barlab xoverhang title("Long Term Disruptions to Clinics" , pos(11) span) scale(0.8)
+  
+  graph export "${git}/outputs/img/covid-disruptions-long.png", replace
+  
+  // Short term
+  betterbar  ///
+    covid_disruption_s_1 covid_disruption_s_2 covid_disruption_s_3 ///
+    covid_disruption_s_4 covid_disruption_s_5 covid_disruption_s_6 ///
+  , pct barlab xoverhang title("Short Term Disruptions to Clinics" , pos(11) span) scale(0.8)
+  
+  graph export "${git}/outputs/img/covid-disruptions-short.png", replace
+  
+
 
 
 // Post covid changes
