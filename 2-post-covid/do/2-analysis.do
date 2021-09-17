@@ -26,9 +26,18 @@ use "${git}/data/provider-survey.dta" , clear
     graph export "${git}/outputs/img/fac-size.png", replace
     
   replace hf_staff = . if hf_staff == 0
-  scatter hf_opt hf_staff  ///
-    , yscale(log) xscale(log) by(hf_type, rescale ixaxes iyaxes title("Facility size and staff" , pos(11) span)) ///
-      ylab(1 10 100 1000 10000) xlab(1 5 25 125) 
+  tw ///
+    (scatter hf_opt hf_staff if hf_type_shops == 1 ///
+      , m(X) mlw(vthin) mc(navy) jitter(1))  ///
+    (scatter hf_opt hf_staff if hf_type_shops == 2 ///
+      , m(Oh) mlw(vthin) mc(red%50) jitter(1))  ///
+    (scatter hf_opt hf_staff if hf_type_shops == 3 ///
+      , m(Oh) mlw(vthin) mc(black%50) jitter(1))  ///
+    , yscale(log) xscale(log) ///
+      by(hf_type, rescale ixaxes iyaxes ///
+        title("Facility size and staff" , pos(11) span) ///
+        legend(on r(1) pos(12) order(1 "Backup" 2 "Non Network" 3 "Shops Plus")) ) ///
+      ylab(1 10 100 1000 10000) xlab(1 5 25 125) legend( r(1) order(1 "Backup" 2 "Non Network" 3 "Shops Plus")) 
       
       graph export "${git}/outputs/img/fac-size-2.png", replace
     
