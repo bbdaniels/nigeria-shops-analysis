@@ -45,14 +45,14 @@ use "${git}/data/provider-survey.dta" , clear
     graph export "${git}/outputs/img/covid-close-count.png", replace
     
 // Service changes
-use "${git}/data/provider-survey.dta" if hf_type_shops != 1, clear
+use "${git}/data/provider-survey.dta" if inlist(hf_type_long,1,3,5,6), clear
   
   // Long term
   betterbar  ///
     covid_disruption_l_1 covid_disruption_l_2 covid_disruption_l_3 ///
     covid_disruption_l_4 covid_disruption_l_5 covid_disruption_l_6 ///
   , pct barlab xoverhang title("Long Term Disruptions to Clinics" , pos(11) span) ///
-    scale(0.8) over(hf_type_shops) legend(on)
+    scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-long.png", replace
   
@@ -61,7 +61,7 @@ use "${git}/data/provider-survey.dta" if hf_type_shops != 1, clear
     covid_disruption_s_1 covid_disruption_s_2 covid_disruption_s_3 ///
     covid_disruption_s_4 covid_disruption_s_5 covid_disruption_s_6 ///
   , pct barlab xoverhang title("Short Term Disruptions to Clinics" , pos(11) span) ///
-    scale(0.8) over(hf_type_shops) legend(on)
+    scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-short.png", replace
   
@@ -69,7 +69,7 @@ use "${git}/data/provider-survey.dta" if hf_type_shops != 1, clear
   betterbar  ///
     covid_new_1 covid_new_2 covid_new_3 covid_new_4 covid_new_5 covid_new_6 covid_new_7 ///
   , pct barlab xoverhang title("New Policies at Clinics" , pos(11) span) ///
-    scale(0.8) over(hf_type_shops) legend(on)
+    scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-policy.png", replace
   
@@ -77,7 +77,7 @@ use "${git}/data/provider-survey.dta" if hf_type_shops != 1, clear
   betterbar  ///
     covid_ppe covid_ppe_1 covid_ppe_2 covid_ppe_3 covid_ppe_4 covid_ppe_5 covid_ppe_6 ///
   , pct barlab xoverhang title("New Fees for PPE at Clinics" , pos(11) span) ///
-    scale(0.8) over(hf_type_shops) legend(on)
+    scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-ppe.png", replace
   
@@ -85,7 +85,7 @@ use "${git}/data/provider-survey.dta" if hf_type_shops != 1, clear
   betterbar  ///
     covid_shortage_1 covid_shortage_2 covid_shortage_3 covid_shortage_4 ///
   , pct barlab xoverhang title("Shortages at Clinics" , pos(11) span) ///
-    scale(0.8) over(hf_type_shops) legend(on)
+    scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-short.png", replace
 
@@ -94,7 +94,7 @@ use "${git}/data/provider-survey.dta" if hf_type_shops != 1, clear
     covid_ended_1 covid_ended_2 covid_ended_3 covid_ended_4 ///
     covid_ended_5 covid_ended_6 covid_ended_7 covid_ended_8 covid_ended_9 ///
   , pct barlab xoverhang title("Service Cuts at Clinics" , pos(11) span) ///
-    scale(0.8) over(hf_type_shops) legend(on)
+    scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-cuts.png", replace
   
@@ -103,7 +103,7 @@ use "${git}/data/provider-survey.dta" if hf_type_shops != 1, clear
     covid_demo_1 covid_demo_2 covid_demo_3 covid_demo_4 ///
     covid_demo_5 covid_demo_6 covid_demo_7 covid_demo_8 covid_demo_9 ///
   , pct barlab xoverhang title("Patient Demographic Changes at Clinics" , pos(11) span) ///
-    scale(0.8) over(hf_type_shops) legend(on)
+    scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-demo.png", replace
   
@@ -112,7 +112,7 @@ use "${git}/data/provider-survey.dta" if hf_type_shops != 1, clear
     covid_policy_1 covid_policy_2 covid_policy_3 ///
     covid_policy_4 covid_policy_5 covid_policy_6 ///
   , pct barlab xoverhang title("Government Policy Impacts at Clinics" , pos(11) span) ///
-    scale(0.8) over(hf_type_shops) legend(on)
+    scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-govt.png", replace
   
