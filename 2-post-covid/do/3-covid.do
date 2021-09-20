@@ -46,6 +46,12 @@ use "${git}/data/provider-survey.dta" , clear
     
 // Service changes
 use "${git}/data/provider-survey.dta" if inlist(hf_type_long,1,3,5,6), clear
+
+  forvalues i = 1/9 {
+    foreach var of varlist *_`i' {
+      cap replace `var' = 0 if `var' == .
+    }
+  }
   
   // Long term
   betterbar  ///
