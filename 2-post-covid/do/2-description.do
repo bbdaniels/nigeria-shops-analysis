@@ -51,11 +51,10 @@ use "${git}/data/provider-survey.dta" , clear
 use "${git}/data/provider-survey.dta" , clear
   
   // Facilities offering screening for TB
-  graph hbar (mean) tb_afb tb_cxr tb_gx tb_hiv ///
-  , over(hf_type_long) ///
-    blab(bar , format(%9.2f)) ytit(" ") title("Facilities offering screening for TB" , pos(11) span) ///
-    legend(on c(2) pos(6) ring(1) order(0 "Facilities offering:" 1 "AFB testing" ///
-      2 "CXR Testing" 3 "GX Testing" 4 "TB-HIV Testing" )) scale(0.7) 
+  betterbar tb_afb tb_cxr tb_gx tb_hiv ///
+  , over(hf_type) by(state) n ///
+    barlab pct ytit(" ") title("Facilities offering screening for TB" , pos(11) span) ///
+    legend(on r(1) pos(6) ring(1) ) scale(0.6) xoverhang 
       
       graph export "${git}/outputs/img/test-tb.png", replace
   
