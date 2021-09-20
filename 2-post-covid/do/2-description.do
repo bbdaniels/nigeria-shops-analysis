@@ -67,12 +67,12 @@ use "${git}/data/provider-survey.dta" , clear
     graph export "${git}/outputs/img/test-covid.png", replace
       
   // Facility Prices
-  graph hbar (mean) ///
+  betterbar ///
     fee_registration fee_consult tb_afb_price tb_gx_price tb_cxr_price tb_hiv_price  ///
-    if hf_type_shops != 1 ///
-  , over(hf_type) by(hf_type_shops , legend(on pos(3)) title("Prices", span pos(11))) ///
-    legend(c(1) symxsize(small) order(1 "Registration" 2 "Consultation" 3 "AFB" 4 "GX" 5 "CXR" 6 "HIV")) ///
-    blab(bar, format(%9.0f)) scale(0.7)
+    if (hf_type == 1 | hf_type == 3) ///
+  , over(hf_type) title("Prices", span pos(11)) ///
+    legend(on c(1) pos(2) ring(0) symxsize(small)) ///
+    barlab scale(0.7) ci barcolor(navy maroon)
     
     graph export "${git}/outputs/img/test-prices.png", replace  
 
