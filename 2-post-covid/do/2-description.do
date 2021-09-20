@@ -63,7 +63,7 @@ use "${git}/data/provider-survey.dta" , clear
   betterbar covid_tests_4 covid_tests_5  ///
   , over(hf_type) by(state) n ///
     barlab pct ytit(" ") title("Facilities offering screening for COVID" , pos(11) span) ///
-    legend(on r(1) pos(6) ring(1) ) scale(0.7) xoverhang 
+    legend(on r(1) pos(6) ring(1) ) scale(0.6) xoverhang 
       
     graph export "${git}/outputs/img/test-covid.png", replace
       
