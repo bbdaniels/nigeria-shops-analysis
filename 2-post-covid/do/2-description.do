@@ -60,11 +60,10 @@ use "${git}/data/provider-survey.dta" , clear
       graph export "${git}/outputs/img/test-tb.png", replace
   
   // Facilities offering screening for COVID      
-  graph hbar (mean) covid_screen tb_covid covid_gx ///
-  , over(hf_type_long) ///
-    blab(bar , format(%9.2f)) ytit(" ") title("Facilities offering screening for COVID" , pos(11) span) ///
-    legend(on c(2) pos(6) ring(1) order(0 "Facilities offering:" 1 "COVID Screening" 2 "Bi-directional Screening" ///
-      3 "COVID GX" )) scale(0.7)
+  betterbar covid_tests_1 covid_tests_2 covid_tests_3 covid_tests_4 covid_tests_5  ///
+  , over(hf_type) ///
+    barlab pct ytit(" ") title("Facilities offering screening for COVID" , pos(11) span) ///
+    legend(on c(1) pos(1) ring(0) ) scale(0.5) 
       
     graph export "${git}/outputs/img/test-covid.png", replace
       
