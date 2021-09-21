@@ -93,7 +93,7 @@ use "${git}/data/provider-survey.dta" if inlist(hf_type_long,1,3,5,6), clear
   , pct barlab xoverhang title("Shortages at Clinics" , pos(11) span) ///
     scale(0.8) over(hf_type_long) legend(on) n
   
-  graph export "${git}/outputs/img/covid-disruptions-short.png", replace
+  graph export "${git}/outputs/img/covid-disruptions-shortage.png", replace
 
   // Service cuts
   betterbar  ///
