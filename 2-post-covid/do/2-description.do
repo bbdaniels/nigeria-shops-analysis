@@ -3,8 +3,21 @@
 // Descriptives table
 use "${git}/data/provider-survey.dta" , clear
 
-  // sumstats ///
-   
+  local stats hf_age hf_inpatient hf_opt hf_staff ///
+    hf_staff_med hf_staff_nurse hf_staff_ppmv ///
+    closed_lockdown tb_afb tb_cxr tb_gx tb_test_n telemedicine
+
+  sumstats ///
+   (`stats' if hf_type == 1 & state == 1) ///
+     (`stats' if hf_type == 2 & state == 1) ///
+     (`stats' if hf_type == 3 & state == 1) ///
+     (`stats' if hf_type == 4 & state == 1) ///
+   (`stats' if hf_type == 1 & state == 2) ///
+     (`stats' if hf_type == 2 & state == 2) ///
+     (`stats' if hf_type == 3 & state == 2) ///
+     (`stats' if hf_type == 4 & state == 2) ///
+  using "${git}/outputs/summary.xlsx" ///
+  , stats(mean median sd min max n) replace
 
 
 // Sample description
@@ -19,7 +32,7 @@ use "${git}/data/provider-survey.dta" , clear
   
   // Sample description  
   graph hbar (sum) n ///
-  , over(hf_type_shops) asy stack over(hf_type_long) over(state_name) ///
+  , over(hf_type_shops) asy stack over(hf_type) over(state_name) ///
     ytit(" ") title("Sample description" , pos(11) span) ///
     legend(on c(1) ring(0) symxsize(small) pos(2)) scale(0.7)
     
@@ -28,7 +41,7 @@ use "${git}/data/provider-survey.dta" , clear
   // Facility size and monthly patient load  
   replace hf_inpatient = . if hf_inpatient == 0
   graph box hf_inpatient hf_opt  ///
-  , scale(0.7) over(hf_type_long, label(angle(30))) over(state_name) ///
+  , scale(0.7) over(hf_type, label(angle(30))) over(state_name) ///
     ytit(" ") ylab(1 10 100 1000 10000) yscale(log) title("Facility capacity and utilization" , pos(11) span) ///
     legend(on c(2) pos(6) ring(1) order(1 "Inpatient Beds" 2 "Monthly Outpatients" ))
     
