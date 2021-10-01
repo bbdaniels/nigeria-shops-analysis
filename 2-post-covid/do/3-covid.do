@@ -121,23 +121,5 @@ use "${git}/data/provider-survey.dta" if inlist(hf_type_long,1,3,5,6), clear
     scale(0.8) over(hf_type_long) legend(on) n
   
   graph export "${git}/outputs/img/covid-disruptions-govt.png", replace
-  
 
-
-// Post covid changes
-
-    
-use "${git}/data/provider-survey.dta" , clear
-  local x = 0
-  qui foreach var of varlist *change {
-    local ++x
-    local lab : var lab `var'
-    graph hbar , over(`var') title("`lab'", size(vsmall) span pos(11)) nodraw blab(bar, format(%9.1f))
-    graph save "${git}/outputs/img/changes-`x'.gph" , replace
-    local graphs `" `graphs' "${git}/outputs/img/changes-`x'.gph" "'
-  }
-  
-  graph combine `graphs' , c(1) imargin(0)
-    graph export "${git}/outputs/img/test-prices-change.png", replace
-    
 // End

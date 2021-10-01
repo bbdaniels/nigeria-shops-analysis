@@ -1,5 +1,12 @@
 // Nigeria post covid survey analysis
 
+// Descriptives table
+use "${git}/data/provider-survey.dta" , clear
+
+  // sumstats ///
+   
+
+
 // Sample description
 use "${git}/data/provider-survey.dta" , clear
   
