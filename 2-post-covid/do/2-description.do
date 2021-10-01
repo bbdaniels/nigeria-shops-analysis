@@ -41,9 +41,9 @@ use "${git}/data/provider-survey.dta" , clear
   // Facility size and monthly patient load  
   replace hf_inpatient = . if hf_inpatient == 0
   graph box hf_inpatient hf_opt  ///
-  , scale(0.7) over(hf_type, label(angle(30))) over(state_name) ///
-    ytit(" ") ylab(1 10 100 1000 10000) yscale(log) title("Facility capacity and utilization" , pos(11) span) ///
-    legend(on c(2) pos(6) ring(1) order(1 "Inpatient Beds" 2 "Monthly Outpatients" ))
+  , scale(0.7) over(hf_type, label(angle(30))) by(state_name , title("Facility capacity and utilization" , pos(11) span)) ///
+    ytit(" ") ylab(1 10 100 1000 10000) yscale(log)  ///
+    legend(off c(2) pos(6) ring(1) order(1 "Inpatient Beds" 2 "Monthly Outpatients" ))
     
     graph export "${git}/outputs/img/fac-size.png", replace
     
