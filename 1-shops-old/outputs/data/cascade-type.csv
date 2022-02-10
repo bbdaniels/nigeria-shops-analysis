@@ -139,16 +139,12 @@ month,year,state,fac_type,attendance_total,screened_total,presumptives_total,dia
 3,2020,"Lagos","Community Pharmacy",418,1085,48,2,"3/2020",Mar 20
 3,2020,"Lagos","Lab",10962,4600,414,32,"3/2020",Mar 20
 3,2020,"Lagos","PPMV",1169,2046,268,14,"3/2020",Mar 20
-4,2020,"Kano","Clinical Facility",19694,22455,2456,101,"4/2020",Apr 20
-4,2020,"Kano","Community Pharmacy",206,321,16,1,"4/2020",Apr 20
 4,2020,"Kano","Lab",3231,2986,329,11,"4/2020",Apr 20
 4,2020,"Kano","PPMV",17621,26209,2284,100,"4/2020",Apr 20
 4,2020,"Lagos","Clinical Facility",57858,36514,886,125,"4/2020",Apr 20
 4,2020,"Lagos","Community Pharmacy",151,189,30,1,"4/2020",Apr 20
 4,2020,"Lagos","Lab",6341,2947,181,18,"4/2020",Apr 20
 4,2020,"Lagos","PPMV",1145,1856,101,8,"4/2020",Apr 20
-5,2020,"Kano","Clinical Facility",18384,22288,2009,71,"5/2020",May 20
-5,2020,"Kano","Community Pharmacy",177,247,19,1,"5/2020",May 20
 5,2020,"Kano","Lab",2523,2773,237,6,"5/2020",May 20
 5,2020,"Kano","PPMV",18275,27515,2197,101,"5/2020",May 20
 5,2020,"Lagos","Clinical Facility",76903,50659,1174,176,"5/2020",May 20

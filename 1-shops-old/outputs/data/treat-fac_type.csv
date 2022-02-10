@@ -183,7 +183,7 @@ month,year,state,fac_type,cases_private,cases_public,t_string,t
 3,2020,"Lagos","Community Pharmacy",2,0,"3/2020",Mar 20
 3,2020,"Lagos","Lab",14,5,"3/2020",Mar 20
 3,2020,"Lagos","PPMV",10,0,"3/2020",Mar 20
-4,2020,"Kano","Clinical Facility",147,23,"4/2020",Apr 20
+4,2020,"Kano","Clinical Facility",0,0,"4/2020",Apr 20
 4,2020,"Kano","Community Pharmacy",0,0,"4/2020",Apr 20
 4,2020,"Kano","Lab",9,0,"4/2020",Apr 20
 4,2020,"Kano","PPMV",89,7,"4/2020",Apr 20
@@ -191,7 +191,7 @@ month,year,state,fac_type,cases_private,cases_public,t_string,t
 4,2020,"Lagos","Community Pharmacy",1,0,"4/2020",Apr 20
 4,2020,"Lagos","Lab",10,4,"4/2020",Apr 20
 4,2020,"Lagos","PPMV",6,0,"4/2020",Apr 20
-5,2020,"Kano","Clinical Facility",132,18,"5/2020",May 20
+5,2020,"Kano","Clinical Facility",0,0,"5/2020",May 20
 5,2020,"Kano","Community Pharmacy",0,0,"5/2020",May 20
 5,2020,"Kano","Lab",7,0,"5/2020",May 20
 5,2020,"Kano","PPMV",69,10,"5/2020",May 20

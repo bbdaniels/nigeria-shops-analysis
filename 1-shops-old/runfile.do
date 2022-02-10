@@ -1,6 +1,6 @@
 // Runfile for Nigeria SHOPS program data analysis
 
-global box "/Users/bbdaniels/Box/COVET/SHOPS Data"
+global box "/Users/bbdaniels/Library/CloudStorage/Box-Box/COVET/SHOPS Data/"
 global git "/Users/bbdaniels/GitHub/nigeria-shops-analysis/1-shops-old"
 
 // Load data

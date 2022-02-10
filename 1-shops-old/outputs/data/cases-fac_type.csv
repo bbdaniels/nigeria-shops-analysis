@@ -183,7 +183,7 @@ month,year,state,fac_type,diagnosed_xpert_total,diagnosed_afb_total,diagnosed_ot
 3,2020,"Lagos","Community Pharmacy",1,0,1,"3/2020",Mar 20
 3,2020,"Lagos","Lab",20,10,2,"3/2020",Mar 20
 3,2020,"Lagos","PPMV",8,6,0,"3/2020",Mar 20
-4,2020,"Kano","Clinical Facility",39,20,42,"4/2020",Apr 20
+4,2020,"Kano","Clinical Facility",0,0,0,"4/2020",Apr 20
 4,2020,"Kano","Community Pharmacy",0,0,0,"4/2020",Apr 20
 4,2020,"Kano","Lab",5,4,2,"4/2020",Apr 20
 4,2020,"Kano","PPMV",28,57,15,"4/2020",Apr 20
@@ -191,7 +191,7 @@ month,year,state,fac_type,diagnosed_xpert_total,diagnosed_afb_total,diagnosed_ot
 4,2020,"Lagos","Community Pharmacy",0,0,1,"4/2020",Apr 20
 4,2020,"Lagos","Lab",8,10,0,"4/2020",Apr 20
 4,2020,"Lagos","PPMV",6,2,0,"4/2020",Apr 20
-5,2020,"Kano","Clinical Facility",34,23,14,"5/2020",May 20
+5,2020,"Kano","Clinical Facility",0,0,0,"5/2020",May 20
 5,2020,"Kano","Community Pharmacy",0,0,0,"5/2020",May 20
 5,2020,"Kano","Lab",4,1,1,"5/2020",May 20
 5,2020,"Kano","PPMV",31,60,10,"5/2020",May 20
