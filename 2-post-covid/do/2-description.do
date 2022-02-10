@@ -3,11 +3,20 @@
 // Descriptives table
 use "${git}/data/provider-survey.dta" , clear
 
+  tab hf_type, gen(hf_type_)
+    foreach var of varlist hf_type_? {
+      local l : var label `var'
+      local l = substr("`l'",strpos("`l'","==")+2,.)
+      lab var `var' "`l'"
+    }
+
   local stats hf_age hf_inpatient hf_opt hf_staff ///
     hf_staff_med hf_staff_nurse hf_staff_ppmv ///
     closed_lockdown tb_afb tb_cxr tb_gx tb_test_n telemedicine
 
   sumstats ///
+   (hf_type_? if state == 1) ///
+   (hf_type_? if state == 2) ///
    (`stats' if hf_type == 1 & state == 1) ///
      (`stats' if hf_type == 2 & state == 1) ///
      (`stats' if hf_type == 3 & state == 1) ///
