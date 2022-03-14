@@ -7,7 +7,6 @@ global git "/Users/bbdaniels/GitHub/nigeria-shops-analysis/1-shops-old"
 
 use "${box}/SHOPS Plus Progam Data 2018-2021.dta" , clear
 iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
-drop if year == 2021
 
   egen cases_private = rsum(cases_starttrt_pvthosp_total ontreat_pvtfac_total)
   egen cases_public = rsum(ref_pubhosp_total cases_starttrt_pubhosp_total)

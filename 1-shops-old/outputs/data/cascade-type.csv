@@ -207,3 +207,11 @@ month,year,state,fac_type,attendance_total,screened_total,presumptives_total,dia
 12,2020,"Lagos","Community Pharmacy",172,719,37,5,"12/2020",Dec 20
 12,2020,"Lagos","Lab",17485,6677,398,15,"12/2020",Dec 20
 12,2020,"Lagos","PPMV",1383,1793,294,23,"12/2020",Dec 20
+1,2021,"Kano","Clinical Facility",19951,26127,3030,101,"1/2021",Jan 21
+1,2021,"Kano","Community Pharmacy",672,842,107,1,"1/2021",Jan 21
+1,2021,"Kano","Lab",3706,2279,305,5,"1/2021",Jan 21
+1,2021,"Kano","PPMV",42552,78333,6041,280,"1/2021",Jan 21
+1,2021,"Lagos","Clinical Facility",119815,70592,2240,240,"1/2021",Jan 21
+1,2021,"Lagos","Community Pharmacy",172,537,44,9,"1/2021",Jan 21
+1,2021,"Lagos","Lab",18929,7356,383,42,"1/2021",Jan 21
+1,2021,"Lagos","PPMV",847,1660,189,16,"1/2021",Jan 21

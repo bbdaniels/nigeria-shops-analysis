@@ -53,3 +53,5 @@ month,year,state,attendance_total,screened_total,presumptives_total,diagnosed_to
 11,2020,"Lagos",160633,84025,3888,317,"11/2020",Nov 20
 12,2020,"Kano",75084,114610,10550,378,"12/2020",Dec 20
 12,2020,"Lagos",139742,78863,3354,289,"12/2020",Dec 20
+1,2021,"Kano",66881,107581,9483,387,"1/2021",Jan 21
+1,2021,"Lagos",139763,80146,2857,307,"1/2021",Jan 21
