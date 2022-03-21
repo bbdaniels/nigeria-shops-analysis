@@ -4,9 +4,13 @@ global box "/Users/bbdaniels/Library/CloudStorage/Box-Box/COVET/SHOPS Data/"
 global git "/Users/bbdaniels/GitHub/nigeria-shops-analysis/1-shops-old"
 
 // Load data
-
+/*
 use "${box}/SHOPS Plus Progam Data 2018-2021.dta" , clear
-iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
+*/
+
+use "${git}/data/data.dta" , clear
+
+  iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
 
   egen cases_private = rsum(cases_starttrt_pvthosp_total ontreat_pvtfac_total)
   egen cases_public = rsum(ref_pubhosp_total cases_starttrt_pubhosp_total)
@@ -14,7 +18,7 @@ iecodebook apply using "${box}/SHOPS Plus Progam Data 2018-2021 codebook.xlsx"
 save "${git}/data/data.dta" , replace
 
 // TX types
-use "${git}/data/data.dta" , clear
+
 
   collapse (sum) cases_private cases_public ///
     , by(year month state) fast
@@ -276,6 +280,8 @@ keep if facility_closed_shutdown != .
 
   // date setup
   keep fac_id close_date1 open_date1 state
+  ren close_date1 temp
+  gen close_date1 = string(month(temp)) + "/" + string(day(temp)) + "/" + string(year(temp))
     gen close = date(close_date1,"MDY") if regexm(close_date1,"/2020")
       replace close_date1 = close_date1 + "20" if regexm(close_date1,"-20")
       gen c2 = date(close_date1,"DMY") if close == .

@@ -183,7 +183,7 @@ month,year,state,fac_type,cases_private,cases_public,t_string,t
 3,2020,"Lagos","Community Pharmacy",2,0,"3/2020",Mar 20
 3,2020,"Lagos","Lab",14,5,"3/2020",Mar 20
 3,2020,"Lagos","PPMV",10,0,"3/2020",Mar 20
-4,2020,"Kano","Clinical Facility",0,0,"4/2020",Apr 20
+4,2020,"Kano","Clinical Facility",147,23,"4/2020",Apr 20
 4,2020,"Kano","Community Pharmacy",0,0,"4/2020",Apr 20
 4,2020,"Kano","Lab",9,0,"4/2020",Apr 20
 4,2020,"Kano","PPMV",89,7,"4/2020",Apr 20
@@ -191,7 +191,7 @@ month,year,state,fac_type,cases_private,cases_public,t_string,t
 4,2020,"Lagos","Community Pharmacy",1,0,"4/2020",Apr 20
 4,2020,"Lagos","Lab",10,4,"4/2020",Apr 20
 4,2020,"Lagos","PPMV",6,0,"4/2020",Apr 20
-5,2020,"Kano","Clinical Facility",0,0,"5/2020",May 20
+5,2020,"Kano","Clinical Facility",132,18,"5/2020",May 20
 5,2020,"Kano","Community Pharmacy",0,0,"5/2020",May 20
 5,2020,"Kano","Lab",7,0,"5/2020",May 20
 5,2020,"Kano","PPMV",69,10,"5/2020",May 20
@@ -251,7 +251,7 @@ month,year,state,fac_type,cases_private,cases_public,t_string,t
 12,2020,"Kano","Community Pharmacy",0,0,"12/2020",Dec 20
 12,2020,"Kano","Lab",6,2,"12/2020",Dec 20
 12,2020,"Kano","PPMV",149,28,"12/2020",Dec 20
-12,2020,"Lagos","Clinical Facility",218,3,"12/2020",Dec 20
+12,2020,"Lagos","Clinical Facility",219,3,"12/2020",Dec 20
 12,2020,"Lagos","Community Pharmacy",3,0,"12/2020",Dec 20
 12,2020,"Lagos","Lab",10,0,"12/2020",Dec 20
 12,2020,"Lagos","PPMV",17,2,"12/2020",Dec 20
@@ -263,19 +263,43 @@ month,year,state,fac_type,cases_private,cases_public,t_string,t
 1,2021,"Lagos","Community Pharmacy",6,0,"1/2021",Jan 21
 1,2021,"Lagos","Lab",19,0,"1/2021",Jan 21
 1,2021,"Lagos","PPMV",9,0,"1/2021",Jan 21
-2,2021,"Kano","Clinical Facility",0,0,"2/2021",Feb 21
+2,2021,"Kano","Clinical Facility",255,12,"2/2021",Feb 21
 2,2021,"Kano","Community Pharmacy",0,0,"2/2021",Feb 21
-2,2021,"Kano","Lab",0,0,"2/2021",Feb 21
-2,2021,"Kano","PPMV",0,0,"2/2021",Feb 21
-2,2021,"Lagos","Clinical Facility",0,0,"2/2021",Feb 21
-2,2021,"Lagos","Community Pharmacy",0,0,"2/2021",Feb 21
-2,2021,"Lagos","Lab",0,0,"2/2021",Feb 21
-2,2021,"Lagos","PPMV",0,0,"2/2021",Feb 21
-3,2021,"Kano","Clinical Facility",0,0,"3/2021",Mar 21
-3,2021,"Kano","Community Pharmacy",0,0,"3/2021",Mar 21
-3,2021,"Kano","Lab",0,0,"3/2021",Mar 21
-3,2021,"Kano","PPMV",0,0,"3/2021",Mar 21
-3,2021,"Lagos","Clinical Facility",0,0,"3/2021",Mar 21
-3,2021,"Lagos","Community Pharmacy",0,0,"3/2021",Mar 21
-3,2021,"Lagos","Lab",0,0,"3/2021",Mar 21
-3,2021,"Lagos","PPMV",0,0,"3/2021",Mar 21
+2,2021,"Kano","Lab",4,0,"2/2021",Feb 21
+2,2021,"Kano","PPMV",154,45,"2/2021",Feb 21
+2,2021,"Lagos","Clinical Facility",242,13,"2/2021",Feb 21
+2,2021,"Lagos","Community Pharmacy",3,0,"2/2021",Feb 21
+2,2021,"Lagos","Lab",14,2,"2/2021",Feb 21
+2,2021,"Lagos","PPMV",14,1,"2/2021",Feb 21
+3,2021,"Kano","Clinical Facility",240,11,"3/2021",Mar 21
+3,2021,"Kano","Community Pharmacy",1,0,"3/2021",Mar 21
+3,2021,"Kano","Lab",4,0,"3/2021",Mar 21
+3,2021,"Kano","PPMV",146,28,"3/2021",Mar 21
+3,2021,"Lagos","Clinical Facility",269,12,"3/2021",Mar 21
+3,2021,"Lagos","Community Pharmacy",5,2,"3/2021",Mar 21
+3,2021,"Lagos","Lab",16,4,"3/2021",Mar 21
+3,2021,"Lagos","PPMV",13,0,"3/2021",Mar 21
+4,2021,"Kano","Clinical Facility",246,21,"4/2021",Apr 21
+4,2021,"Kano","Community Pharmacy",0,0,"4/2021",Apr 21
+4,2021,"Kano","Lab",2,0,"4/2021",Apr 21
+4,2021,"Kano","PPMV",144,28,"4/2021",Apr 21
+4,2021,"Lagos","Clinical Facility",265,6,"4/2021",Apr 21
+4,2021,"Lagos","Community Pharmacy",9,0,"4/2021",Apr 21
+4,2021,"Lagos","Lab",14,3,"4/2021",Apr 21
+4,2021,"Lagos","PPMV",10,1,"4/2021",Apr 21
+5,2021,"Kano","Clinical Facility",223,12,"5/2021",May 21
+5,2021,"Kano","Community Pharmacy",1,0,"5/2021",May 21
+5,2021,"Kano","Lab",2,0,"5/2021",May 21
+5,2021,"Kano","PPMV",120,20,"5/2021",May 21
+5,2021,"Lagos","Clinical Facility",240,9,"5/2021",May 21
+5,2021,"Lagos","Community Pharmacy",7,0,"5/2021",May 21
+5,2021,"Lagos","Lab",14,3,"5/2021",May 21
+5,2021,"Lagos","PPMV",17,1,"5/2021",May 21
+6,2021,"Kano","Clinical Facility",266,10,"6/2021",Jun 21
+6,2021,"Kano","Community Pharmacy",0,0,"6/2021",Jun 21
+6,2021,"Kano","Lab",1,0,"6/2021",Jun 21
+6,2021,"Kano","PPMV",144,13,"6/2021",Jun 21
+6,2021,"Lagos","Clinical Facility",233,4,"6/2021",Jun 21
+6,2021,"Lagos","Community Pharmacy",2,0,"6/2021",Jun 21
+6,2021,"Lagos","Lab",23,4,"6/2021",Jun 21
+6,2021,"Lagos","PPMV",10,0,"6/2021",Jun 21
